@@ -8,21 +8,21 @@ This study used two publicly available datasets for the experiments: **DialogSum
 
 This repository is organized as follows:
 
-- **AAF_1_fenju**  
+- **AAF\_1_fenju**  
   _Data Processing_: Splitting dialogue texts into the format "Speaker: Dialogue" to facilitate information extraction and generation.
 
-- **AAF_2_1_SR**  
+- **AAF\_2_1_SR**  
   _Data Augmentation_: Synonym Replacement (SR).
 
-- **AAF_2_2_action_extraction**  
-  **AAF_2_2_topic_annotation**  
-  **AAF_2_2_ATGEN**  
+- **AAF\_2_2_action_extraction**  
+  **AAF\_2_2_topic_annotation**  
+  **AAF\_2_2_ATGEN**  
   _Data Augmentation_: Sequential processes for Action Extraction, Topic Segmentation, and Topic-Action-Based Dialogue Generation Enhancement.
 
-- **AAF_Trend_split**  
+- **AAF\Trend_split**  
   _Fusion Process_: Dataset splitting mechanism for good and bad data during the fusion process.
 
-- **AAF_train_bart.py**  
+- **AAF\train_bart.py**  
   _Model Training_: Adaptive fusion augmentation on the BART model.
 
 ---
