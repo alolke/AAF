@@ -21,19 +21,18 @@ def write_jsonl_file(file_path, data):
 
 
 def main():
-    file_path = 'dialogsum.train.jsonl'  # 替换为你的JSONL文件路径
+    file_path = 'dialogsum.train.jsonl'  
     output_file_path = 'dialogsum-1p-3.jsonl'
     sample_size = 125
 
-    # 读取JSONL文件
+    # Read_JSONL files
     data = read_jsonl_file(file_path)
 
-    # 检查数据是否足够
     if len(data) < sample_size:
-        print(f"警告：文件中的数据少于{sample_size}个，只能返回全部数据。")
+        print(f"Warning: The number of data in the file is less than {sample_2}, and only all data can be returned.")
         sample_size = len(data)
 
-        # 随机抽取样本
+        # Randomly select samples
     sample = random_sample(data, sample_size)
 
     write_jsonl_file(output_file_path, sample)
