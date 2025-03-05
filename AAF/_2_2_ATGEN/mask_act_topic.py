@@ -9,8 +9,8 @@ from safetensors.torch import load_file
 import ast
 
 # Load model
-model_checkpoint_path = './act-gen-model-SAMSUM/checkpoint-624'  # 模型文件夹路径
-safetensors_file = './act-gen-model-SAMSUM/checkpoint-624/model.safetensors'  # 模型的safetensors文件路径
+model_checkpoint_path = './act-gen-model-SAMSUM/checkpoint-624'  # model_path
+safetensors_file = './act-gen-model-SAMSUM/checkpoint-624/model.safetensors'  # safetensors_path
 
 # Load BART model architecture
 model = BartForConditionalGeneration.from_pretrained(model_checkpoint_path,
@@ -27,7 +27,7 @@ def load_topic_indices(topic_file):
     topic_indices_list = []
     with open(topic_file, 'r', encoding="utf-8") as f:
         for line in f:
-            # 每一行读取为一个列表，转化为数组
+            # Read each line as a list and convert it into an array
             topic_indices_list.append(ast.literal_eval(line.strip()))
     return topic_indices_list
 
@@ -63,7 +63,7 @@ def process_json_file(file_path, topic_indices):
         else:
             # If there are multiple topic segments, randomly select one and mask all sentences in that segment
             selected_topic = random.choice(list(topics.values()))
-            masked_indices = selected_topic  # 直接使用该主题部分的所有句子索引
+            masked_indices = selected_topic  # Directly use all sentence indexes in the topic section to read each line as a list and convert it into an array
 
         # Construct `src` and `gen`
         masked_src = []  # Sentences with masks
