@@ -23,7 +23,7 @@ def process_json_files(datas, model, tokenizer):
 
         # ROUGE score
         rouge_results = metric.compute(predictions=[generated_text], references=[original_summary])
-        rouge_score = rouge_results['rougeL'][0].fmeasure  # 选择 ROUGE-L F1 分数
+        rouge_score = rouge_results['rougeL'][0].fmeasure  # ROUGE-L F1 
 
         results.append((generated_text, rouge_score))
 
@@ -46,7 +46,7 @@ def load_list_from_line(filename, line_number):
         lines = file.readlines()
         if 0 <= line_number < len(lines):
             line = lines[line_number].strip()
-            # 使用逗号分隔字符串，并将结果转换为numpy.float64类型的列表
+            # Separate strings with commas and convert the result to a list of numpy.float64 type
             lst = [np.float64(x) for x in line.split(',')]
             return lst
         else:
