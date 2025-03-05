@@ -103,7 +103,7 @@ def random_swap(dialogues):
 # Randomly delete sentences from the dialogue.
 def random_delete(dialogues, delete_prob):
     if len(dialogues) <= 1:
-        return dialogues  # 如果只有一个句子，不删除
+        return dialogues  # If there is only one sentence, do not delete it
     return [sentence for sentence in dialogues if random.random() > delete_prob]
 
 # Enhance dialogues with synonym replacement.
