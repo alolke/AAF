@@ -16,13 +16,13 @@ import random
 import logging
 import shutil
 
-# 固定随机种子
+# Fixed random seed
 seed = 42
 random.seed(seed)
 np.random.seed(seed)
 torch.manual_seed(seed)
 torch.cuda.manual_seed(seed)
-torch.cuda.manual_seed_all(seed)  # 如果使用多GPU
+torch.cuda.manual_seed_all(seed)  # using multiple GPUs
 cudnn.deterministic = True
 cudnn.benchmark = False
 set_seed(seed)
@@ -201,7 +201,7 @@ def Fusion_augmentaton_Training(num, pre_adjustable_para, stop_threshold):
         fp16=False,
         save_total_limit=1,
         metric_for_best_model="eval_rouge1",
-        load_best_model_at_end=True,  # 在训练结束时加载最好的模型
+        load_best_model_at_end=True,  
         greater_is_better=True,
         seed=100,
         generation_max_length=max_target_length,
